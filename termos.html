@@ -6,12 +6,11 @@
     <title>Termos e Condições de Uso | Investe Aí</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Definindo a fonte Inter (Padrão do site) */
+        /* Estilos Padrão do Site (Importação de Fonte e Cores) */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         :root {
             font-family: 'Inter', sans-serif;
         }
-        /* Cores principais (Consistentes com o site: Azul/Cinza #6490a1) */
         .primary-color {
             background-color: #6490a1; 
         }
@@ -27,34 +26,40 @@
         .hover-primary-text:hover {
             color: #507686;
         }
-        /* Estilos específicos para o conteúdo legal (ajustados para Inter) */
+
+        /* Estilos do Conteúdo Legal (aplicando Tailwind onde possível e CSS para hierarquia) */
         .legal-content h1 {
-            font-size: 2.25rem;
+            font-size: 2.25rem; /* text-4xl */
             text-transform: uppercase;
             border-bottom: 2px solid #000;
             padding-bottom: 0.5em;
             margin-bottom: 1em;
+            font-weight: 700; /* font-bold */
         }
         .legal-content h2 {
-            font-size: 1.5rem;
+            font-size: 1.5rem; /* text-2xl */
             margin-top: 1.5em;
             margin-bottom: 0.5em;
             border-bottom: 1px solid #eee;
             padding-bottom: 0.2em;
+            font-weight: 600; /* font-semibold */
+            color: #1f2937; /* gray-800 */
         }
         .legal-content h3 {
-            font-size: 1.25rem;
+            font-size: 1.25rem; /* text-xl */
             margin-top: 1em;
             margin-bottom: 0.5em;
+            font-weight: 600; /* font-semibold */
         }
         .legal-content blockquote {
-            border-left: 4px solid #6490a1; /* Usando a cor primária */
+            border-left: 4px solid #6490a1; /* primary-text */
             padding-left: 1em;
             margin: 1.5em 0;
             font-style: italic;
-            background-color: #f0f8ff; /* Tom claro da cor primária */
+            background-color: #f0f8ff; 
             color: #333;
             padding: 10px;
+            border-radius: 4px;
         }
     </style>
 </head>
@@ -69,7 +74,7 @@
             <nav class="hidden md:flex space-x-8 font-medium">
                 <a href="index.html" class="text-gray-600 hover-primary-text transition duration-200">Início</a>
                 <a href="ArtigosHomeAtt.html" class="text-gray-600 hover-primary-text transition duration-200">Artigos</a>
-                <a href="sobre nós.html" class="text-gray-600 hover-primary-text transition duration-200">Sobre</a>
+                <a href="sobre-nos.html" class="text-gray-600 hover-primary-text transition duration-200">Sobre</a>
                 <a href="quiz.html" class="text-gray-600 hover-primary-text transition duration-200">Quiz</a>
                 <a href="contato.html" class="text-gray-600 hover-primary-text transition duration-200">Contato</a>
             </nav>
@@ -80,6 +85,160 @@
         </div>
     </header>
 
-    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-200 legal-content">
+
+            <header>
+                <h1>TERMOS E CONDIÇÕES DE USO</h1>
+                <h2 class="!text-3xl font-extrabold primary-text">Investe Aí</h2> 
+                <p class="text-sm text-gray-600 mt-2"><strong>Última Atualização:</strong> 30 de Outubro de 2023</p>
+            </header>
+
+            <main class="text-gray-700">
+                
+                <section id="aceitacao">
+                    <h2>1. DA APRESENTAÇÃO E ACEITAÇÃO</h2>
+                    <p class="mb-4">
+                        Estes Termos e Condições de Uso ("Termos") têm como objetivo reger a utilização do website **Investe Aí**, bem como de todos os serviços e conteúdos oferecidos pela [Nome Completo ou Razão Social da Empresa] (Investe Aí), inscrita no CNPJ/MF sob o nº [Número do CNPJ], com sede em Vare Laje, Rua dos Inválidos, N.º 158 - 201, Rio de Janeiro - RJ, 20231-046 (doravante "Proprietária").
+                    </p>
+                    <p>
+                        Ao acessar ou utilizar o Site, o Usuário manifesta sua <strong class="font-bold">aceitação livre, expressa e informada</strong> a todas as cláusulas e condições destes Termos, bem como à nossa 
+                        <a href="PoliticaDePrivacidade.html" class="text-blue-700 hover:underline">Política de Privacidade</a>. Caso não concorde com qualquer disposição, o Usuário não deve utilizar o Site.
+                    </p>
+                </section>
+
+                <hr class="section-separator my-8 border-t border-gray-300">
+
+                <section id="uso-cadastro">
+                    <h2>2. DO USO DO SITE E CADASTRO</h2>
+                    
+                    <h3>2.1. Requisitos para Uso</h3>
+                    <p>
+                        O acesso ao Site é livre para a maioria dos conteúdos. No entanto, para a utilização de serviços específicos que exijam cadastro, o Usuário declara ser maior de **[Idade, ex: 18] anos** e civilmente capaz.
+                    </p>
+
+                    <h3>2.2. Responsabilidades do Usuário</h3>
+                    <p>
+                        O Usuário é o único responsável por fornecer dados verdadeiros, precisos e atualizados no cadastro e por manter a segurança e o sigilo de sua senha de acesso. O Usuário concorda, ainda, em abster-se de:
+                    </p>
+                    <ul class="list-disc ml-8 mt-2 space-y-1">
+                        <li>Violar a legislação vigente, direitos de terceiros ou os Termos aqui estabelecidos.</li>
+                        <li>Utilizar o Site para fins ilícitos, prejudiciais ou não autorizados.</li>
+                        <li>Transmitir qualquer tipo de vírus, *malware* ou código destrutivo.</li>
+                    </ul>
+                </section>
+
+                <hr class="section-separator my-8 border-t border-gray-300">
+
+                <section id="propriedade-intelectual">
+                    <h2>3. DA PROPRIEDADE INTELECTUAL</h2>
+
+                    <h3>3.1. Conteúdo da Proprietária</h3>
+                    <p>
+                        Todo o conteúdo do Site (incluindo, mas não se limitando a, textos, gráficos, imagens, vídeos, marcas, logotipos, layout e código-fonte) é de propriedade exclusiva da Proprietária ou de terceiros licenciados, sendo protegido pelas leis de direitos autorais e propriedade industrial.
+                    </p>
+
+                    <h3>3.2. Restrições de Uso e Reprodução</h3>
+                    <p>
+                        É estritamente proibida a cópia, reprodução, modificação, distribuição ou uso comercial de qualquer conteúdo do Site sem a permissão prévia e expressa da Proprietária.
+                    </p>
+                    
+                    <h3>3.3. Conteúdo Gerado pelo Usuário</h3>
+                    <p>
+                        Ao publicar qualquer conteúdo no Site (como comentários ou posts), o Usuário concede à Proprietária uma licença mundial, não exclusiva e gratuita para usar, reproduzir e exibir tal conteúdo no âmbito do funcionamento do Site. O Usuário garante que possui todos os direitos necessários para conceder esta licença.
+                    </p>
+                </section>
+
+                <hr class="section-separator my-8 border-t border-gray-300">
+
+                <section id="privacidade">
+                    <h2>4. DA PRIVACIDADE E TRATAMENTO DE DADOS</h2>
+                    <p>
+                        O tratamento dos dados pessoais do Usuário é regido pela nossa <strong>Política de Privacidade</strong>, que detalha a forma como coletamos, usamos, armazenamos e protegemos suas informações, em total conformidade com a Lei Geral de Proteção de Dados (LGPD).
+                    </p>
+                    <blockquote>
+                        <p><strong>Acesse a Política de Privacidade completa em:</strong> <a href="PoliticaDePrivacidade.html" class="text-blue-700 hover:underline">Investe Aí/politica-de-privacidade</a></p>
+                    </blockquote>
+                </section>
+
+                <hr class="section-separator my-8 border-t border-gray-300">
+
+                <section id="responsabilidade">
+                    <h2>5. DA ISENÇÃO E LIMITAÇÃO DE RESPONSABILIDADE</h2>
+                    <ul class="list-disc ml-8 mt-2 space-y-1">
+                        <li><strong>Disponibilidade:</strong> A Proprietária não garante que o Site estará disponível de forma ininterrupta ou livre de erros, mas envidará os melhores esforços para a manutenção dos serviços.</li>
+                        <li><strong>Links de Terceiros:</strong> A Proprietária não se responsabiliza pelo conteúdo, serviços ou práticas de sites de terceiros que possam ser acessados por meio de links presentes no Site.</li>
+                        <li><strong>Danos:</strong> A Proprietária não será responsável por quaisquer danos diretos, indiretos, incidentais ou consequenciais decorrentes do uso ou da impossibilidade de usar o Site.</li>
+                        <li><strong>Aviso Financeiro:</strong> O **Investe Aí** é uma plataforma educacional e informativa. **Nenhum conteúdo deve ser considerado aconselhamento ou recomendação de investimento.** O Usuário é o único responsável por suas decisões financeiras.</li>
+                    </ul>
+                </section>
+
+                <hr class="section-separator my-8 border-t border-gray-300">
+
+                <section id="modificacoes">
+                    <h2>6. DAS MODIFICAÇÕES DESTES TERMOS</h2>
+                    <p>
+                        A Proprietária reserva-se o direito de alterar estes Termos a qualquer momento. Em caso de alterações significativas, o Usuário será notificado. A continuidade do uso do Site após a data da última atualização implica na aceitação dos novos Termos.
+                    </p>
+                </section>
+
+                <hr class="section-separator my-8 border-t border-gray-300">
+
+                <section id="lei-foro">
+                    <h2>7. DA LEI APLICÁVEL E FORO</h2>
+                    <p>
+                        Estes Termos são regidos e interpretados pelas leis da República Federativa do Brasil. Fica eleito o Foro da Comarca de **Rio de Janeiro - RJ** para dirimir quaisquer disputas ou litígios oriundos deste instrumento, com exclusão de qualquer outro, por mais privilegiado que seja.
+                    </p>
+                </section>
+
+            </main>
+
+            <footer class="mt-8 pt-6 border-t border-gray-300">
+                <h3 class="font-bold text-lg mb-2">Informações de Contato</h3>
+                <p class="text-sm"><strong>Endereço:</strong> Vare Laje, Rua dos Inválidos, N.º 158 - 201, Rio de Janeiro - RJ, 20231-046</p>
+                <p class="text-sm"><strong>E-mail:</strong> <a href="mailto:investeai@gmail.com" class="text-blue-700 hover:underline">investeai@gmail.com</a></p>
+                <p class="text-sm"><strong>Telefone:</strong> xxxxxxxxxxxxx</p>
+                <p class="text-xs mt-4 text-gray-500">
+                    <span class="font-bold">AVISO LEGAL:</span> Este é um modelo e sua validade e adequação devem ser verificadas por um profissional jurídico.
+                </p>
+            </footer>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Investe Aí</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition duration-200">Início</a></li>
+                        <li><a href="ArtigosHomeAtt.html" class="hover:text-white transition duration-200">Artigos</a></li>
+                        <li><a href="sobre-nos.html" class="hover:text-white transition duration-200">Sobre</a></li>
+                        <li><a href="contato.html" class="hover:text-white transition duration-200">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="termos.html" class="hover:text-white transition duration-200">Termos de Uso</a></li>
+                        <li><a href="PoliticaDePrivacidade.html" class="hover:text-white transition duration-200">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-2">
+                    <h4 class="font-bold mb-4 primary-text">Aviso</h4>
+                    <p class="text-xs text-gray-500">
+                        Este blog é para fins educacionais e informativos. Não é uma recomendação de investimento. Consulte sempre um profissional de finanças certificado antes de tomar decisões.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2025 Investe Aí. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
 
 
