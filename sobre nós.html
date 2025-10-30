@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Investe Aí</title>
+    <!-- Carregando Tailwind CSS CDN para estilização fácil e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definindo a fonte Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Cores principais */
+        .primary-color {
+            background-color: #0d9488; /* Emerald 600 */
+        }
+        .primary-text {
+            color: #0d9488;
+        }
+        .hover-bg-emerald:hover {
+            background-color: #0f766e; /* Emerald 700 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Cabeçalho (Header) Fixo e Responsivo -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Título do Blog -->
+            <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/!DOCTYPE.html" class="text-3xl font-extrabold primary-text hover:text-emerald-700 transition duration-300">
+                Investe <span class="text-gray-900">Aí</span>
+            </a>
+           
+            <!-- Navegação (Menu) - 'Sobre' em destaque -->
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/!DOCTYPE.html" class="text-gray-600 hover:primary-text transition duration-200">Início</a>
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/ArtigosHomeAtt.html" class="text-gray-600 hover:primary-text transition duration-200">Artigos</a>
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/sobre%20n%C3%B3s.html" class="primary-text font-bold border-b-2 border-emerald-500">Sobre</a>
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/quiz2.html" class="text-gray-600 hover:primary-text transition duration-200">Quiz</a>
+            </nav>
+
+            <button class="md:hidden text-gray-600 hover:primary-text focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal - Sobre Nós -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 primary-text">
+                Nossa Missão
+            </h1>
+            <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                Olá, prazer! Somos alunos da ETEC Prof. Dr. José Dagnoni e desenvolvemos este projeto como parte do nosso Trabalho de Conclusão de Curso (TCC).
+            </p>
+
+            <!-- Seção do TCC -->
+            <div class="border-l-4 border-emerald-500 pl-6 mb-10 bg-emerald-50 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">O Foco do Projeto</h2>
+                <p class="text-lg text-gray-700">
+                    Nosso tema é Gestão Financeira de Patrimônio e Investimento, com foco especial em ajudar alunos da rede ETEC a entender melhor como organizar suas finanças e investir de forma consciente.
+                </p>
+            </div>
+
+            <!-- Seção de Pesquisa e Objetivo -->
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">A Pesquisa por Trás do Site</h2>
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                Este trabalho investiga o tema do conhecimento monetário dos jovens do ensino médio, buscando identificar a importância do controle financeiro para a área de alunos da rede ETEC.
+            </p>
+            
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Com base em uma pesquisa, observamos que muitos possuem consciência básica ou nula sobre o tema. É por isso que o nosso site auxiliará a elevar o nível de conhecimento sobre investimentos, visando uma melhor preparação e inserção ao mercado financeiro com a gestão do seu dinheiro na inicialização da vida adulta.
+            </p>
+
+            <div class="mt-8 pt-6 border-t border-gray-200 text-center">
+                <p class="text-sm text-gray-500">
+                    Uma iniciativa de alunos da ETEC Prof. Dr. José Dagnoni.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Investe Aí</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-200">Missão</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Editorial</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-200">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-2">
+                    <h4 class="font-bold mb-4 primary-text">Aviso</h4>
+                    <p class="text-xs text-gray-500">
+                        Este blog é para fins educacionais e informativos. Não é uma recomendação de investimento. Consulte sempre um profissional de finanças certificado antes de tomar decisões.
+                    </p>
+                </div>
+            </div>
+           
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2025 Investe Aí. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

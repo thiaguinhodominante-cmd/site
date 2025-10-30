@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Descubra Seu Perfil de Investidor</title>
+    <!-- Carregando Tailwind CSS CDN para estilização fácil e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Definindo a fonte Inter */
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Cores principais */
+        .primary-color {
+            background-color: #0d9488; /* Emerald 600 */
+        }
+        .primary-text {
+            color: #0d9488;
+        }
+        .hover-bg-emerald:hover {
+            background-color: #0f766e; /* Emerald 700 */
+        }
+        .quiz-button {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+        }
+        .quiz-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Cabeçalho (Header) Fixo e Responsivo -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo/Título do Blog -->
+            <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/!DOCTYPE.html" class="text-3xl font-extrabold primary-text hover:text-emerald-700 transition duration-300">
+                Investe <span class="text-gray-900">Aí</span>
+            </a>
+            
+            <!-- Navegação (Menu) -->
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/!DOCTYPE.html" class="text-gray-600 hover:primary-text transition duration-200">Início</a>
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/ArtigosHomeAtt.html" class="text-gray-600 hover:primary-text transition duration-200">Artigos</a>
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/sobre%20n%C3%B3s.html" class="text-gray-600 hover:primary-text transition duration-200">Sobre</a>
+            </nav>
+
+            <button class="md:hidden text-gray-600 hover:primary-text focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Seção Principal do Quiz -->
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        <section class="bg-white p-6 md:p-12 rounded-xl shadow-2xl w-full">
+            <h1 class="text-4xl font-extrabold primary-text text-center mb-8 border-b-2 border-emerald-100 pb-4">
+                Descubra Seu Perfil de Investidor
+            </h1>
+            
+            <!-- Container do Quiz -->
+            <div id="quiz-container" class="space-y-6">
+                
+                <!-- Tela Inicial/Instruções -->
+                <div id="start-screen" class="text-center p-8">
+                    <p class="text-xl mb-6 text-gray-700">
+                        O objetivo deste quiz é entender sua tolerância a riscos e seus objetivos financeiros. Responda com honestidade para obter a definição de perfil mais precisa.
+                    </p>
+                    <p class="text-lg font-semibold primary-text mb-8">
+                        Ao final, você será classificado como **Conservador**, **Moderado** ou **Arrojado**.
+                    </p>
+                    <button id="start-button" class="primary-color text-white font-bold py-3 px-8 rounded-full quiz-button hover-bg-emerald focus:outline-none">
+                        Começar Quiz
+                    </button>
+                </div>
+                
+                <!-- Área de Perguntas (Escondida Inicialmente) -->
+                <div id="question-area" class="hidden">
+                    <div class="text-center mb-6">
+                        <!-- O texto do progresso é atualizado via JS -->
+                        <p class="text-sm text-gray-500 mb-2" id="progress-text">Pergunta 1 de 7</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div id="progress-bar" class="primary-color h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="text-2xl font-bold mb-6 text-center primary-text" id="question-text"></h2>
+                    
+                    <div id="options-container" class="space-y-4">
+                        <!-- Opções injetadas aqui pelo JavaScript, em ordem fixa -->
+                    </div>
+                </div>
+
+                <!-- Área de Resultados (Escondida Inicialmente) -->
+                <div id="result-area" class="hidden text-center p-8 bg-emerald-50 rounded-xl">
+                    <h2 class="text-3xl font-extrabold primary-text mb-4">Seu Perfil É:</h2>
+                    <p class="text-5xl font-black mb-6 text-gray-900" id="profile-name"></p>
+                    <div class="text-lg text-gray-700 space-y-4 max-w-md mx-auto" id="profile-description"></div>
+                    <button id="restart-button" class="mt-8 bg-gray-500 text-white font-bold py-3 px-8 rounded-full quiz-button hover:bg-gray-600 focus:outline-none">
+                        Refazer Quiz
+                    </button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé (Footer) -->
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Investe Aí</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition duration-200">sobre</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-200">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/sobre%20n%C3%B3s.html" class="hover:text-white transition duration-200">Termos de Uso</a></li>
+                        <li><a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/PoliticaDePrivacidade.html" class="hover:text-white transition duration-200">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-2">
+                    <h4 class="font-bold mb-4 primary-text">Aviso</h4>
+                    <p class="text-xs text-gray-500">
+                        Este blog é para fins educacionais e informativos. Não é uma recomendação de investimento. Consulte sempre um profissional de finanças certificado antes de tomar decisões.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2025 Investe Aí. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Dados do Quiz (7 perguntas com pontuações 1, 2 e 3)
+        // A ordem e a pontuação das opções AGORA são fixas para garantir a classificação linear (1=Conservador, 2=Moderado, 3=Arrojado)
+        const originalQuizData = [
+            {
+                question: "Qual o seu objetivo principal hoje?",
+                options: [
+                    { text: "Guardar dinheiro para imprevistos e emergências. (Curto prazo)", points: 1 },
+                    { text: "Comprar algo grande em 3 a 5 anos (carro, intercâmbio, imóvel). (Médio prazo)", points: 2 },
+                    { text: "Construir patrimônio para a aposentadoria ou liberdade financeira. (Longo prazo)", points: 3 }
+                ]
+            },
+            {
+                question: "Qual o seu nível de conhecimento sobre investimentos e o mercado financeiro?",
+                options: [
+                    { text: "Sou iniciante total — não entendo quase nada sobre investimentos.", points: 1 },
+                    { text: "Conheço o básico — sei o que são Tesouro Direto, CDB e poupança.", points: 2 },
+                    { text: "Tenho boa experiência — entendo sobre ações, FIIs e fundamentos de empresas.", points: 3 }
+                ]
+            },
+            {
+                question: "Se o valor dos seus investimentos caísse 15% em um mês, o que você faria?",
+                options: [
+                    { text: "Entraria em pânico e resgataria para evitar novas perdas.", points: 1 },
+                    { text: "Ficaria preocupado, mas manteria o investimento esperando recuperação.", points: 2 },
+                    { text: "Veria como uma oportunidade e investiria mais (preços em 'promoção').", points: 3 }
+                ]
+            },
+            {
+                question: "Por quanto tempo você NÃO pretende precisar deste dinheiro?",
+                options: [
+                    { text: "Menos de 1 ano.", points: 1 },
+                    { text: "Entre 2 e 5 anos.", points: 2 },
+                    { text: "Mais de 5 anos (quanto mais tempo, melhor).", points: 3 }
+                ]
+            },
+            {
+                question: "Qual das opções melhor descreve sua relação com risco e retorno?",
+                options: [
+                    { text: "Prefiro segurança, mesmo que o retorno seja baixo.", points: 1 },
+                    { text: "Aceito algum risco em busca de retornos melhores.", points: 2 },
+                    { text: "Busco o maior retorno possível, mesmo que envolva risco alto.", points: 3 }
+                ]
+            },
+            {
+                question: "Como você reagiria se um investimento rendesse menos que a poupança por alguns meses?",
+                options: [
+                    { text: "Ficaria insatisfeito e mudaria para algo mais seguro.", points: 1 },
+                    { text: "Esperaria mais um tempo para ver se melhora.", points: 2 },
+                    { text: "Manteria tranquilo — sei que oscilações são normais.", points: 3 }
+                ]
+            },
+            {
+                question: "Quanto da sua renda você consegue investir regularmente sem comprometer seu padrão de vida?",
+                options: [
+                    { text: "Menos de 10%.", points: 1 },
+                    { text: "Entre 10% e 30%.", points: 2 },
+                    { text: "Mais de 30%.", points: 3 }
+                ]
+            }
+        ];
+
+        // Elementos do DOM
+        const startScreen = document.getElementById('start-screen');
+        const startButton = document.getElementById('start-button');
+        const questionArea = document.getElementById('question-area');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const resultArea = document.getElementById('result-area');
+        const profileName = document.getElementById('profile-name');
+        const profileDescription = document.getElementById('profile-description');
+        const restartButton = document.getElementById('restart-button');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
+
+        // Variáveis de Estado do Quiz
+        let currentQuestionIndex = 0;
+        let totalScore = 0;
+        let quizData = originalQuizData; // Usa os dados na ordem original e fixa
+
+        /**
+         * Inicia o Quiz, mostrando a área de perguntas e escondendo a tela inicial.
+         */
+        function startQuiz() {
+            startScreen.classList.add('hidden');
+            questionArea.classList.remove('hidden');
+            resultArea.classList.add('hidden');
+            
+            // Reseta para a ordem fixa
+            quizData = originalQuizData;
+            
+            currentQuestionIndex = 0;
+            totalScore = 0;
+            displayQuestion();
+            updateProgress();
+        }
+
+        /**
+         * Atualiza o texto e a barra de progresso.
+         */
+        function updateProgress() {
+            const totalQuestions = quizData.length;
+            const progress = (currentQuestionIndex / totalQuestions) * 100;
+            progressBar.style.width = `${progress}%`;
+            
+            // Verifica se o quiz está em andamento para exibir o progresso
+            if (currentQuestionIndex < totalQuestions) {
+                 progressText.textContent = `Pergunta ${currentQuestionIndex + 1} de ${totalQuestions}`;
+            } else {
+                 progressText.textContent = `Quiz Concluído`;
+            }
+        }
+
+        /**
+         * Exibe a pergunta atual e suas opções na tela.
+         */
+        function displayQuestion() {
+            if (currentQuestionIndex < quizData.length) {
+                const currentQuestion = quizData[currentQuestionIndex];
+                
+                // Adiciona o número da pergunta de volta
+                const questionNumber = currentQuestionIndex + 1;
+                questionText.textContent = `${questionNumber}. ${currentQuestion.question}`;
+
+                optionsContainer.innerHTML = ''; // Limpa opções anteriores
+
+                // As opções são renderizadas na ordem em que estão no array (ordem fixa)
+
+                currentQuestion.options.forEach((option) => {
+                    const button = document.createElement('button');
+                    button.textContent = option.text;
+                    // A pontuação é fixa: 1º opção = 1 ponto, 2º opção = 2 pontos, 3º opção = 3 pontos
+                    button.className = 'quiz-button w-full text-left p-4 bg-gray-100 rounded-lg text-lg text-gray-700 hover:bg-emerald-100 hover:text-gray-900 transition duration-300';
+                    button.onclick = () => handleAnswer(option.points);
+                    optionsContainer.appendChild(button);
+                });
+                
+                updateProgress();
+
+            } else {
+                showResult();
+            }
+        }
+
+        /**
+         * Lida com a resposta do usuário, soma os pontos e avança para a próxima pergunta.
+         * @param {number} points - Pontos ganhos com a resposta.
+         */
+        function handleAnswer(points) {
+            totalScore += points;
+            currentQuestionIndex++;
+            
+            // Pausa breve para feedback visual antes de mudar a pergunta
+            setTimeout(() => {
+                displayQuestion();
+            }, 100); 
+        }
+
+        /**
+         * Calcula o perfil de investidor com base na pontuação total e exibe o resultado.
+         * Pontuação: 7 (Mínimo) a 21 (Máximo)
+         * - Conservador: 7 a 10
+         * - Moderado: 11 a 16
+         * - Arrojado: 17 a 21
+         */
+        function showResult() {
+            questionArea.classList.add('hidden');
+            progressBar.style.width = `100%`; // Conclui a barra de progresso
+            resultArea.classList.remove('hidden');
+
+            let profile = { name: "", description: "", colorClass: "" };
+            
+            // Lógica de classificação
+            if (totalScore <= 10) { 
+                profile.name = "CONSERVADOR 🛡️";
+                profile.description = `
+                    <p>Você prioriza a segurança e a liquidez, evitando ao máximo riscos e oscilações do mercado. Seus investimentos ideais são aqueles de **Renda Fixa** com baixo risco, como Tesouro Selic, CDBs com garantia do FGC e fundos DI.</p>
+                    <p class="font-semibold text-sm">Foco: Segurança e preservação do capital.</p>
+                `;
+                profile.colorClass = 'text-emerald-700'; // Verde
+            } else if (totalScore <= 16) { 
+                profile.name = "MODERADO ⚖️";
+                profile.description = `
+                    <p>Você busca equilíbrio entre segurança e rentabilidade. Está disposto(a) a aceitar um nível moderado de risco para obter retornos acima da média. Sua carteira pode ter uma combinação de **Renda Fixa** sólida e uma parcela em **Renda Variável** (como FIIs e ações de empresas bem estabelecidas).</p>
+                    <p class="font-semibold text-sm">Foco: Crescimento consistente e diversificação.</p>
+                `;
+                profile.colorClass = 'text-indigo-700'; // Roxo/Azul
+            } else { // 17 a 21
+                profile.name = "ARROJADO (OU AGRESSIVO) 🚀";
+                profile.description = `
+                    <p>Você tem alta tolerância ao risco e visão de longo prazo, buscando o maior retorno possível. Você entende e aceita grandes oscilações do mercado. Sua carteira pode ser majoritariamente composta por **Renda Variável**, incluindo ações, Small Caps e fundos de alto risco.</p>
+                    <p class="font-semibold text-sm">Foco: Máxima rentabilidade e crescimento exponencial.</p>
+                `;
+                profile.colorClass = 'text-red-700'; // Vermelho/Alto risco
+            }
+
+            profileName.textContent = profile.name;
+            profileName.className = `text-5xl font-black mb-6 text-gray-900 ${profile.colorClass}`;
+            profileDescription.innerHTML = profile.description;
+        }
+
+        // Event Listeners
+        startButton.addEventListener('click', startQuiz);
+        restartButton.addEventListener('click', startQuiz);
+
+        // Inicializa o progresso ao carregar a página
+        progressBar.style.width = `0%`;
+        // Usa o tamanho do array original para o progresso inicial
+        progressText.textContent = `Pergunta 1 de ${originalQuizData.length}`;
+
+    </script>
+</body>
+</html>

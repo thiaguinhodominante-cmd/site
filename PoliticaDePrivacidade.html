@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidade - Investe Aí</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 
+    Chosen Palette: Trustworthy Blue/Grey (Base: #6490a1, Neutrals: Slate)
+    Application Structure Plan: A single-page app with sticky tab-based navigation (Visão Geral, Dados, Uso, Direitos, Contato) for quick section access. Key information, like "Seus Direitos (LGPD)", is presented in an interactive accordion to reduce cognitive load and make specific information findable. This architecture transforms a dense legal document into a navigable, user-friendly tool, prioritizing clarity and ease of access over the original linear structure.
+    Visualization & Content Choices: [Report Info: Seção 7 (Direitos LGPD)] -> [Goal: Informar (específico)] -> [Viz/Presentation: Accordion (HTML/JS)] -> [Interaction: Click to expand/collapse] -> [Justification: Makes dense legal rights digestible and scannable] -> [Library/Method: Vanilla JS]; [Report Info: Seção 2 (Dados Coletados)] -> [Goal: Compare (automático vs. voluntário)] -> [Viz/Presentation: Two-column card layout] -> [Interaction: Static] -> [Justification: Visually separates the two types of data collection] -> [Library/Method: HTML/Tailwind]
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            font-family: 'Inter', sans-serif;
+            --primary-color: #6490a1;
+            --primary-color-dark: #507686;
+            --primary-color-light: #e0eaf0;
+        }
+        .primary-text { color: var(--primary-color); }
+        .primary-bg { background-color: var(--primary-color); }
+        .primary-bg-light { background-color: var(--primary-color-light); }
+        .primary-border { border-color: var(--primary-color); }
+        .hover-primary-dark:hover { background-color: var(--primary-color-dark); }
+        
+        .tab.active {
+            border-bottom-color: var(--primary-color);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .accordion-item.active .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <div class="min-h-screen">
+        
+        <header class="bg-white shadow-sm sticky top-0 z-50">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/!DOCTYPE.html" class="text-3xl font-extrabold primary-text hover:opacity-80 transition duration-300">
+                    Investe <span class="text-gray-900">Aí</span>
+                </a>
+                <p class="text-slate-600">Política de Privacidade Interativa</p>
+            </div>
+            
+            <nav id="tabs" class="border-b border-slate-200">
+                <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-4 sm:space-x-8 overflow-x-auto">
+                    <button data-target="geral" class="tab active text-sm sm:text-base font-medium text-slate-500 hover:text-slate-700 py-3 px-1 border-b-2 border-transparent transition-all duration-200 whitespace-nowrap">Visão Geral</button>
+                    <button data-target="dados" class="tab text-sm sm:text-base font-medium text-slate-500 hover:text-slate-700 py-3 px-1 border-b-2 border-transparent transition-all duration-200 whitespace-nowrap">Dados Coletados</button>
+                    <button data-target="uso" class="tab text-sm sm:text-base font-medium text-slate-500 hover:text-slate-700 py-3 px-1 border-b-2 border-transparent transition-all duration-200 whitespace-nowrap">Uso e Segurança</button>
+                    <button data-target="direitos" class="tab text-sm sm:text-base font-medium text-slate-500 hover:text-slate-700 py-3 px-1 border-b-2 border-transparent transition-all duration-200 whitespace-nowrap">Seus Direitos (LGPD)</button>
+                    <button data-target="contato" class="tab text-sm sm:text-base font-medium text-slate-500 hover:text-slate-700 py-3 px-1 border-b-2 border-transparent transition-all duration-200 whitespace-nowrap">Contato</button>
+                </div>
+            </nav>
+        </header>
+
+        <main class="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
+            
+            <section id="geral" class="tab-content space-y-6 scroll-mt-32">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Visão Geral da Política</h2>
+                    <p class="text-lg text-slate-600 mb-4">Esta seção resume nossa política e sua aceitação. Nosso objetivo é descrever como o site "Investe Aí" coleta, usa e protege suas informações de forma transparente.</p>
+                    <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                        <h3 class="font-semibold text-lg text-slate-800 mb-2">Introdução e Aceitação</h3>
+                        <p class="text-slate-700">Ao utilizar o site Investe Aí, você concorda com a coleta e uso de informações de acordo com esta Política. O Investe Aí é um portal de conteúdo educacional sobre finanças e investimentos.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cookies e Rastreamento</h3>
+                    <p class="text-slate-700 mb-4">Utilizamos cookies e tecnologias de rastreamento semelhantes para monitorar a atividade em nosso Serviço e reter certas informações. Cookies são pequenos arquivos de dados armazenados no seu dispositivo.</p>
+                    <p class="text-slate-600 text-sm p-4 bg-slate-50 rounded-lg border border-slate-200">Você pode instruir seu navegador a recusar todos os cookies ou a indicar quando um cookie está sendo enviado. No entanto, se você não aceitar cookies, poderá não conseguir usar algumas partes do nosso Serviço.</p>
+                </div>
+            </section>
+            
+            <section id="dados" class="tab-content hidden space-y-6 scroll-mt-32">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Dados Coletados</h2>
+                    <p class="text-lg text-slate-600 mb-6">Coletamos diferentes tipos de informações para diversos fins, visando fornecer e melhorar nosso conteúdo para você. Separamos em duas categorias principais:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                            <h3 class="font-semibold text-lg text-slate-800 mb-3">Dados de Navegação (Coleta Automática)</h3>
+                            <p class="text-slate-700 mb-4">Enquanto você navega, podemos coletar informações que seu navegador envia:</p>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li>Endereço de IP</li>
+                                <li>Tipo e versão do navegador</li>
+                                <li>Páginas visitadas e tempo gasto</li>
+                                <li>Data e hora da visita</li>
+                                <li>Dados de geolocalização</li>
+                            </ul>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-lg border border-slate-200">
+                            <h3 class="font-semibold text-lg text-slate-800 mb-3">Dados Pessoais (Coleta Voluntária)</h3>
+                            <p class="text-slate-700 mb-4">Coletamos dados pessoais apenas se você os fornecer voluntariamente para:</p>
+                            <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                <li><b>Newsletter:</b> Nome e e-mail.</li>
+                                <li><b>Contato:</b> Informações que você incluir em formulários de contato.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="uso" class="tab-content hidden space-y-6 scroll-mt-32">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Uso dos Dados</h2>
+                    <p class="text-lg text-slate-600 mb-6">O Investe Aí utiliza os dados coletados para as seguintes finalidades principais:</p>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <li class="p-4 bg-slate-50 rounded-lg border border-slate-200">Fornecer e manter o conteúdo do blog.</li>
+                        <li class="p-4 bg-slate-50 rounded-lg border border-slate-200">Melhorar o site analisando padrões de uso.</li>
+                        <li class="p-4 bg-slate-50 rounded-lg border border-slate-200">Permitir que você use recursos interativos (Quiz).</li>
+                        <li class="p-4 bg-slate-50 rounded-lg border border-slate-200">Gerenciar sua inscrição na newsletter.</li>
+                        <li class="p-4 bg-slate-50 rounded-lg border border-slate-200">Monitorar o uso para identificar problemas técnicos.</li>
+                        <li class="p-4 bg-slate-50 rounded-lg border border-slate-200">Notificá-lo sobre alterações em nossos serviços.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Compartilhamento de Dados</h2>
+                    <p class="text-lg text-slate-600 mb-4">Sua privacidade é prioridade. Não vendemos, trocamos ou transferimos seus dados pessoais de identificação para terceiros.</p>
+                    <p class="text-slate-600 text-sm p-4 bg-slate-50 rounded-lg border border-slate-200"><b>Exceções:</b> Podemos compartilhar dados com parceiros de confiança que nos auxiliam a operar o site (desde que concordem em manter a confidencialidade) ou se formos obrigados por lei.</p>
+                </div>
+                 <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Segurança dos Dados</h2>
+                    <p class="text-lg text-slate-600 mb-4">Empregamos medidas de segurança razoáveis (como criptografia e controle de acesso) para proteger suas informações.</p>
+                    <p class="text-slate-600 text-sm p-4 bg-yellow-50 rounded-lg border border-yellow-200 text-yellow-800">Nenhum método de transmissão pela Internet ou armazenamento eletrônico é 100% seguro. Embora nos esforcemos para usar meios comercialmente aceitáveis para proteger seus dados, não podemos garantir sua segurança absoluta.</p>
+                </div>
+            </section>
+            
+            <section id="direitos" class="tab-content hidden space-y-6 scroll-mt-32">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Seus Direitos (LGPD)</h2>
+                    <p class="text-lg text-slate-600 mb-6">De acordo com a Lei Geral de Proteção de Dados (LGPD), você tem direitos claros sobre suas informações. Clique em cada item para saber mais:</p>
+                    
+                    <div id="accordion" class="space-y-3">
+                        
+                        <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                            <button class="accordion-toggle flex justify-between items-center w-full p-5 text-left bg-slate-50 hover:bg-slate-100 transition-colors duration-200">
+                                <span class="font-semibold text-lg primary-text">Confirmar a existência de tratamento</span>
+                                <span class="accordion-arrow text-slate-500 transform transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                </span>
+                            </button>
+                            <div class="accordion-content px-5 text-slate-700">
+                                Você tem o direito de nos perguntar e receber a confirmação se estamos ou não tratando algum dado pessoal seu.
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                            <button class="accordion-toggle flex justify-between items-center w-full p-5 text-left bg-slate-50 hover:bg-slate-100 transition-colors duration-200">
+                                <span class="font-semibold text-lg primary-text">Acessar os dados que temos</span>
+                                <span class="accordion-arrow text-slate-500 transform transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                </span>
+                            </button>
+                            <div class="accordion-content px-5 text-slate-700">
+                                Se tratarmos seus dados, você pode solicitar acesso a uma cópia dessas informações.
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                            <button class="accordion-toggle flex justify-between items-center w-full p-5 text-left bg-slate-50 hover:bg-slate-100 transition-colors duration-200">
+                                <span class="font-semibold text-lg primary-text">Corrigir dados incompletos ou errados</span>
+                                <span class="accordion-arrow text-slate-500 transform transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                </span>
+                            </button>
+                            <div class="accordion-content px-5 text-slate-700">
+                                Se você identificar que seus dados estão incompletos, inexatos ou desatualizados, pode solicitar a correção.
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                            <button class="accordion-toggle flex justify-between items-center w-full p-5 text-left bg-slate-50 hover:bg-slate-100 transition-colors duration-200">
+                                <span class="font-semibold text-lg primary-text">Solicitar anonimato ou eliminação</span>
+                                <span class="accordion-arrow text-slate-500 transform transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                </span>
+                            </button>
+                            <div class="accordion-content px-5 text-slate-700">
+                                Você pode solicitar o anonimato, bloqueio ou eliminação de dados que considere desnecessários ou excessivos.
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border border-slate-200 rounded-lg overflow-hidden">
+                            <button class="accordion-toggle flex justify-between items-center w-full p-5 text-left bg-slate-50 hover:bg-slate-100 transition-colors duration-200">
+                                <span class="font-semibold text-lg primary-text">Revogar o consentimento</span>
+                                <span class="accordion-arrow text-slate-500 transform transition-transform duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                                </span>
+                            </button>
+                            <div class="accordion-content px-5 text-slate-700">
+                                Se o tratamento dos seus dados foi baseado no seu consentimento (como a newsletter), você pode revogá-lo a qualquer momento.
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm p-4 bg-slate-50 rounded-lg border border-slate-200 mt-6">Para exercer qualquer um desses direitos, utilize as informações de contato na próxima seção.</p>
+                </div>
+            </section>
+            
+            <section id="contato" class="tab-content hidden space-y-6 scroll-mt-32">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Contato</h2>
+                    <p class="text-lg text-slate-600 mb-6">Se você tiver alguma dúvida sobre esta Política de Privacidade ou desejar exercer seus direitos (conforme a seção anterior), entre em contato conosco através dos seguintes e-mails da equipe:</p>
+                    <div class="p-6 bg-slate-50 rounded-lg border border-slate-200">
+                        <ul class="space-y-3">
+                            <li><a href="mailto:fancosbo@gmail.com" class="font-medium primary-text hover:underline">fancosbo@gmail.com</a></li>
+                            <li><a href="mailto:mmborges0@gmail.com" class="font-medium primary-text hover:underline">mmborges0@gmail.com</a></li>
+                            <li><a href="mailto:121matheusrodrigues@gmail.com" class="font-medium primary-text hover:underline">121matheusrodrigues@gmail.com</a></li>
+                            <li><a href="mailto:pedror0cha9432@gmail.com" class="font-medium primary-text hover:underline">pedror0cha9432@gmail.com</a></li>
+                            <li><a href="mailto:moisesmarlos177@gmail.com" class="font-medium primary-text hover:underline">moisesmarlos177@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-slate-100">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Alterações na Política</h2>
+                    <p class="text-lg text-slate-600">Podemos atualizar nossa Política de Privacidade periodicamente. Notificaremos você sobre quaisquer alterações publicando a nova Política de Privacidade nesta página.</p>
+                    <p class="text-slate-600 text-sm p-4 bg-slate-50 rounded-lg border border-slate-200 mt-4">Recomendamos que você revise esta Política periodicamente. As alterações entram em vigor quando são publicadas nesta página.</p>
+                </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex justify-between items-center">
+                <span class="text-sm text-gray-400">&copy; 2025 Investe Aí. Todos os direitos reservados.</span>
+                <a href="file:///D:/Nova%20pasta-20251016T140954Z-1-001/Nova%20pasta/!DOCTYPE.html" class="text-sm text-gray-400 hover:text-white transition">Voltar ao Início</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const targetId = this.dataset.target;
+                    
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    tabContents.forEach(content => {
+                        if (content.id === targetId) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
+                    });
+
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        window.history.pushState(null, null, `#${targetId}`);
+                    }
+                });
+            });
+
+            const accordions = document.querySelectorAll('.accordion-toggle');
+            accordions.forEach(accordion => {
+                accordion.addEventListener('click', function () {
+                    const item = this.closest('.accordion-item');
+                    item.classList.toggle('active');
+                });
+            });
+
+            function showTabFromHash() {
+                const hash = window.location.hash.substring(1);
+                if (hash) {
+                    const targetTab = document.querySelector(`.tab[data-target="${hash}"]`);
+                    if (targetTab) {
+                        targetTab.click();
+                    }
+                }
+            }
+            
+            showTabFromHash();
+            window.addEventListener('hashchange', showTabFromHash);
+        });
+    </script>
+</body>
+</html>
