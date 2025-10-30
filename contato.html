@@ -1,145 +1,148 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contatos | Investe AI</title>
+    <title>Contatos | Investe Aí</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Estilização formal e minimalista, consistente com Termos de Uso */
-        body {
-            font-family: Georgia, serif;
-            line-height: 1.6;
-            color: #333;
-            padding: 20px;
-            background-color: #f8f8f8;
+        /* Estilos base do site para cores e fontes */
+        :root { font-family: 'Inter', sans-serif; }
+        .primary-color { background-color: #6490a1; }
+        .primary-text { color: #6490a1; }
+        .active-border { border-color: #a1c5d4; }
+        .hover-primary-dark:hover { background-color: #507686; }
+        .hover-primary-text:hover { color: #507686; }
+
+        /* Estilos específicos para a página de Contato */
+        .contact-section h2 {
+            font-size: 1.5rem; /* text-2xl */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 40px;
-            border: 1px solid #ccc;
-            box-shadow: none;
-        }
-        h1, h2, h3 {
-            font-family: 'Times New Roman', serif;
-            color: #000;
-            line-height: 1.2;
-        }
-        h1 {
-            font-size: 2.2em;
-            text-transform: uppercase;
-            border-bottom: 2px solid #000;
-            padding-bottom: 0.5em;
-            margin-bottom: 1em;
-        }
-        h2 {
-            font-size: 1.8em;
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 0.2em;
-        }
-        h3 {
-            font-size: 1.4em;
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-        }
-        ul {
-            list-style-type: none; /* Remove bullets para listar contatos */
-            padding-left: 0;
-            margin-top: 0.5em;
-        }
-        li {
-            margin-bottom: 0.5em;
-            padding: 8px 0;
+        .contact-list li {
+            padding: 0.5rem 0;
             border-bottom: 1px dashed #eee;
-        }
-        li:last-child {
-            border-bottom: none;
-        }
-        a {
-            color: #000080;
-            text-decoration: underline;
-        }
-        .section-separator {
-            border: none;
-            border-top: 1px solid #ccc;
-            margin: 2em 0;
-        }
-        strong {
-            font-weight: bold;
-        }
-        footer {
-            margin-top: 2em;
-            padding-top: 1em;
-            border-top: 1px solid #ccc;
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <div class="container">
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold primary-text hover-primary-text transition duration-300">
+                Investe <span class="text-gray-900">Aí</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="text-gray-600 hover-primary-text transition duration-200">Início</a>
+                <a href="ArtigosHomeAtt.html" class="text-gray-600 hover-primary-text transition duration-200">Artigos</a>
+                <a href="sobre nós.html" class="text-gray-600 hover-primary-text transition duration-200">Sobre</a>
+                <a href="quiz2.html" class="text-gray-600 hover-primary-text transition duration-200">Quiz</a>
+                <a href="contato.html" class="primary-text font-bold border-b-2 active-border">Contato</a>
+            </nav>
+            <button class="md:hidden text-gray-600 hover-primary-text focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </header>
 
-        <header>
-            <h1>CONTATOS</h1>
-            <h2>Investe AI</h2>
-            <p>Entre em contato com nossa equipe ou utilize os canais de suporte geral abaixo.</p>
-        </header>
-
-        <main>
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-200">
             
-            <!-- 1. CONTATOS DA EQUIPE -->
-            <section id="equipe">
-                <h2>1. CONTATOS INDIVIDUAIS DA EQUIPE</h2>
-                <p>Para assuntos específicos, você pode contatar os membros de nossa equipe:</p>
-                
-                <ul style="margin-top: 1em;">
-                    <li>
-                        <strong>João Francisco F. Bignotto:</strong> 
-                        <a href="mailto:fancosbo@gmail.com">fancosbo@gmail.com</a>
-                    </li>
-                    <li>
-                        <strong>Matheus Matsumoto Borges:</strong> 
-                        <a href="mailto:mmborges0@gmail.com">mmborges0@gmail.com</a>
-                    </li>
-                    <li>
-                        <strong>Matheus Rodrigues Alves:</strong> 
-                        <a href="mailto:121matheusrodrigues@gmail.com">121matheusrodrigues@gmail.com</a>
-                    </li>
-                    <li>
-                        <strong>Moisés Marlos da C. Silva:</strong> 
-                        <a href="mailto:moisesmarlos177@gmail.com">moisesmarlos177@gmail.com</a>
-                    </li>
-                    <li>
-                        <strong>Pedro Rocha R. da Silva:</strong> 
-                        <a href="mailto:pedror0cha9432@gmail.com">pedror0cha9432@gmail.com</a>
-                    </li>
-                </ul>
-            </section>
+            <header class="text-center mb-8">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-2 primary-text">Fale Conosco</h1>
+                <p class="text-lg text-gray-600">Entre em contato com nossa equipe ou utilize os canais de suporte geral abaixo.</p>
+            </header>
 
-            <hr class="section-separator">
-
-            <!-- 2. CONTATO GERAL E SEDE -->
-            <section id="geral">
-                <h2>2. CANAIS DE CONTATO GERAL</h2>
-                <p>Para dúvidas gerais, suporte ou assuntos administrativos, utilize os canais e o endereço da sede:</p>
+            <div class="contact-section">
                 
-                <div style="margin-top: 1.5em;">
-                    <p><strong>E-mail de Contato:</strong> 
-                        <a href="mailto:investeai@gmail.com">investeai@gmail.com</a>
-                    </p>
-                    <p style="margin-top: 1em;"><strong>Endereço Sede:</strong> Rua Antônio Pedroso, 1731 - Cidade Nova, Santa Bárbara d'Oeste - SP, 13454-398</p>
+                <section id="equipe" class="mb-10">
+                    <h2>1. Contatos Individuais da Equipe</h2>
+                    <p class="mb-4 text-gray-700">Para assuntos específicos, você pode contatar os membros de nossa equipe diretamente:</p>
+                    
+                    <ul class="contact-list text-gray-700">
+                        <li>
+                            <strong class="primary-text">João Francisco F. Bignotto:</strong> 
+                            <a href="mailto:fancosbo@gmail.com" class="text-blue-700 hover:text-blue-900 transition duration-200">fancosbo@gmail.com</a>
+                        </li>
+                        <li>
+                            <strong class="primary-text">Matheus Matsumoto Borges:</strong> 
+                            <a href="mailto:mmborges0@gmail.com" class="text-blue-700 hover:text-blue-900 transition duration-200">mmborges0@gmail.com</a>
+                        </li>
+                        <li>
+                            <strong class="primary-text">Matheus Rodrigues Alves:</strong> 
+                            <a href="mailto:121matheusrodrigues@gmail.com" class="text-blue-700 hover:text-blue-900 transition duration-200">121matheusrodrigues@gmail.com</a>
+                        </li>
+                        <li>
+                            <strong class="primary-text">Moisés Marlos da C. Silva:</strong> 
+                            <a href="mailto:moisesmarlos177@gmail.com" class="text-blue-700 hover:text-blue-900 transition duration-200">moisesmarlos177@gmail.com</a>
+                        </li>
+                        <li>
+                            <strong class="primary-text">Pedro Rocha R. da Silva:</strong> 
+                            <a href="mailto:pedror0cha9432@gmail.com" class="text-blue-700 hover:text-blue-900 transition duration-200">pedror0cha9432@gmail.com</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <hr class="my-8 border-gray-200">
+
+                <section id="geral">
+                    <h2>2. Canais de Contato Geral</h2>
+                    <p class="mb-4 text-gray-700">Para dúvidas gerais, suporte ou assuntos administrativos, utilize os canais e o endereço da sede:</p>
+                    
+                    <div class="space-y-4 text-gray-700">
+                        <p>
+                            <strong class="primary-text">E-mail de Contato Geral:</strong> 
+                            <a href="mailto:investeai@gmail.com" class="text-blue-700 hover:text-blue-900 transition duration-200 font-medium">investeai@gmail.com</a>
+                        </p>
+                        <p class="pt-2">
+                            <strong class="primary-text">Endereço Sede:</strong> Rua Antônio Pedroso, 1731 - Cidade Nova, Santa Bárbara d'Oeste - SP, 13454-398
+                        </p>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Investe Aí</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition duration-200">Início</a></li>
+                        <li><a href="ArtigosHomeAtt.html" class="hover:text-white transition duration-200">Artigos</a></li>
+                        <li><a href="contato.html" class="hover:text-white transition duration-200">Contato</a></li>
+                    </ul>
                 </div>
-            </section>
-
-        </main>
-
-        <footer>
-            <p style="font-size: 0.8em; color: #666;">Investe AI</p>
-        </footer>
-
-    </div>
+                <div>
+                    <h4 class="font-bold mb-4 primary-text">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="termos.html" class="hover:text-white transition duration-200">Termos de Uso</a></li>
+                        <li><a href="PoliticaDePrivacidade.html" class="hover:text-white transition duration-200">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-2">
+                    <h4 class="font-bold mb-4 primary-text">Aviso</h4>
+                    <p class="text-xs text-gray-500">
+                        Este blog é para fins educacionais e informativos. Não é uma recomendação de investimento. Consulte sempre um profissional de finanças certificado antes de tomar decisões.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2025 Investe Aí. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
 
 </body>
 </html>
+
