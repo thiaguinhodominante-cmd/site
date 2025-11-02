@@ -245,7 +245,26 @@
         startButton.addEventListener('click', startQuiz);
         restartButton.addEventListener('click', startQuiz);
     </script>
+<script>
+    // Abre/fecha o menu no celular
+    const menuButton = document.querySelector('header button');
+    const navMenu = document.querySelector('header nav');
+
+    menuButton.addEventListener('click', () => {
+        navMenu.classList.toggle('hidden'); // Mostra ou esconde o menu
+        navMenu.classList.toggle('flex');   // Mostra como flex
+        navMenu.classList.toggle('flex-col');
+        navMenu.classList.toggle('bg-white');
+        navMenu.classList.toggle('absolute');
+        navMenu.classList.toggle('top-16');
+        navMenu.classList.toggle('right-4');
+        navMenu.classList.toggle('p-4');
+        navMenu.classList.toggle('rounded-xl');
+        navMenu.classList.toggle('shadow-lg');
+    });
+</script>
 </body>
 </html>
+
 
 
